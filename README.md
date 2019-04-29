@@ -1,14 +1,12 @@
-# Pilot
+# Harbour
 
 Web enabled synth.
 
 ## Install & Run
 
-You can download [builds](https://hundredrabbits.itch.io/orca) for **OSX, Windows and Linux**, or if you wish to build it yourself, follow these steps:
-
 ```
-git clone https://github.com/hundredrabbits/Pilot.git
-cd Pilot/desktop/
+git clone https://github.com/ryanramage/Harbour.git
+cd Harbour/desktop/
 npm install
 npm start
 ```
@@ -39,9 +37,9 @@ The Channel Routes adjusts mute,pan,solo,volume settings of the specified channe
 ### Synth
 
 The synth routes adjust the instrument params on for the channel. The params you can adjust are
-different, depending on the instrument. The params can be found [here](https://github.com/hundredrabbits/Pilot/tree/master/desktop/sources/scripts/lib/types/instruments)
+different, depending on the instrument. The params can be found [here](https://github.com/ryanramage/Harbour/tree/master/desktop/sources/scripts/lib/types/instruments)
 
-To choose the setting to adjust use a path notation. For example, to select the [FMSynth](https://github.com/hundredrabbits/Pilot/blob/master/desktop/sources/scripts/lib/types/instruments/FMSynth.js) oscillator type, use
+To choose the setting to adjust use a path notation. For example, to select the [FMSynth](https://github.com/ryanramage/Harbour/blob/master/desktop/sources/scripts/lib/types/instruments/FMSynth.js) oscillator type, use
 C0oscillator#type#2 where the '#' character is a path operator, and denotes where the path
 ends and the value starts. Here are some more examples, on the FMSynth
 
@@ -55,7 +53,7 @@ ends and the value starts. Here are some more examples, on the FMSynth
 The effects routes let you modify values on channel effects to change the sound. Effects are specified as an array on the channel, and so you must specify the effect you want
 to operate on as a 0 index array.
 
-Path notation is also used to select what param to change. The params can be found [here](https://github.com/hundredrabbits/Pilot/tree/master/desktop/sources/scripts/lib/types/effects)
+Path notation is also used to select what param to change. The params can be found [here](https://github.com/ryanramage/Harbour/tree/master/desktop/sources/scripts/lib/types/effects)
 
 | Command      | Channel | Effect| CMD              | Type                                   |
 | :-           | :-:     | :-:   | :-:              | :-:                                    |
@@ -66,6 +64,5 @@ Path notation is also used to select what param to change. The params can be fou
 ## Extras
 
 - This application supports the [Ecosystem Theme](https://github.com/hundredrabbits/Themes).
-- Support this project through [Patreon](https://patreon.com/100).
 - See the [License](LICENSE.md) file for license rights and limitations (MIT).
 - Pull Requests are welcome!
