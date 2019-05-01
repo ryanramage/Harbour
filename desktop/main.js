@@ -2,6 +2,22 @@ const { app, BrowserWindow, webFrame, Menu, dialog } = require('electron')
 const path = require('path')
 const url = require('url')
 const shell = require('electron').shell
+const http = require('http')
+
+const homedir = require('os').homedir()
+const patchDir = `${homedir}/harbour`
+
+const ecstatic = require('ecstatic')({
+  root: patchDir,
+  showDir: true,
+  autoIndex: true,
+  cache: 0,
+  cors: true
+});
+http.createServer(ecstatic).listen(51051);
+
+console.log('Listening on :51051')
+console.log('Patch Dir:', patchDir)
 
 let isShown = true
 

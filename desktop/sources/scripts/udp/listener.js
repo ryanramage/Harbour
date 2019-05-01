@@ -3,13 +3,13 @@ module.exports = Listener
 const dgram = require('dgram')
 const routes = require('./routes')
 
-function Listener (pilot) {
+function Listener (harbour) {
   this.server = dgram.createSocket('udp4')
   this.server.on('message', (msg, rinfo) => {
     let path = msg.toString()
     for (let i = 0; i < routes.length; i++) {
       let route = routes[i]
-      if (checkRoute(pilot, path, route)) return
+      if (checkRoute(harbour, path, route)) return
     }
   })
   this.server.on('listening', () => {
@@ -23,7 +23,7 @@ function Listener (pilot) {
   this.server.bind(49161) // TODO - make this configurable
 }
 
-function checkRoute(pilot, path, route) {
+function checkRoute(harbour, path, route) {
   let match = path.match(route.path)
   if (!match) return false
   let paramsName = Object.keys(route.params)
@@ -35,6 +35,6 @@ function checkRoute(pilot, path, route) {
     let argValue = argValues[i]
     if (paramName && argValue && argValue !== '') args[paramName] = argValue
   }
-  route.handler(pilot, args)
+  route.handler(harbour, args)
   return true
 }

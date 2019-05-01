@@ -24,13 +24,13 @@
     "electron-rebuild": "^1.8.2"
   },
   "dependencies": {
-    "butterchurn": "^2.6.2",
-    "butterchurn-presets": "^2.4.7",
+    "ecstatic": "^4.1.2",
     "file-url": "^2.0.2",
     "getshortie": "^2.0.0",
     "joi-browser": "^13.4.0",
     "lodash": "^4.17.11",
     "lodash-flatkeystree": "^1.0.0",
-    "tone": "^13.4.9"
+    "tone": "^13.4.9",
+    "tone-patch": "^1.0.0"
   }
 }

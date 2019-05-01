@@ -11,8 +11,8 @@ module.exports = {
     velocity: Joi.string().description('the velocity to play the note'),
     duration: Joi.string().description('duration to play the note'),
   },
-  handler: (pilot, params) => {
-    let channel = pilot.getChannel(params.channel)
+  handler: (harbour, params) => {
+    let channel = harbour.getChannel(params.channel)
     if (!channel) return
     let _note = note.fromCase(params.note)
     let _velocity = base16.normalRange(params.velocity || 'F')
