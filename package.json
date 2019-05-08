@@ -1,0 +1,35 @@
+{
+  "name": "harbour",
+  "version": "1.0.0",
+  "description": "Web enabled synth.",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel index.html"
+  },
+  "alias": {
+    "vue": "./node_modules/vue/dist/vue.common.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ryanramage/Harbour.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ryanramage/Harbour/issues"
+  },
+  "homepage": "https://github.com/ryanramage/Harbour#readme",
+  "dependencies": {
+    "tone": "^13.4.9",
+    "tone-patch": "^1.0.2",
+    "vue": "^2.6.10",
+    "vue-numeric-input": "^1.0.5",
+    "vue-rocker-switch": "^1.2.4",
+    "vue-switches": "^2.0.1",
+    "webmidi": "^2.3.3"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.12.3"
+  }
+}
