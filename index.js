@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueNumericInput from 'vue-numeric-input';
 import WebMidi from 'webmidi'
+const MidiClock = require('midi-clock')
 const tonePatch = require('tone-patch')
 const Tone = require('tone')
 const Theme = require('./theme')
@@ -9,18 +10,15 @@ const Row = require('./lib/row')
 Vue.component('vue-numeric-input', VueNumericInput)
 WebMidi.enable(err => {
 
-  Tone.start()
-  Tone.Transport.start()
+  //Tone.start()
+  //Tone.Transport.start()
   let initialRows = []
   // load the patch array from the hash
   if (window.location.hash) {
     try {
       let _decoded = JSON.parse(decodeURIComponent(window.location.hash.substring(1)))
       initialRows = _decoded.map(d => new Row(WebMidi, Tone, d))
-
-    } catch (e) {
-      console.log('could not load', e)
-    }
+    } catch (e) { console.log('could not load', e) }
   }
 
 
@@ -33,7 +31,14 @@ WebMidi.enable(err => {
       port: WebMidi.inputs.map((input, i) => ({ text: input.name, value: input.id })),
       rows: initialRows
     },
+    created: function () {
+      console.log('created')
+      // connect any unconnected ports
+    },
     methods: {
+      toggleclock: function () {
+        console.log('toggle')
+      },
       addPatch: function () {
         let about = {}
         let patchUrl = new String(this.patchUrl).toString()
@@ -45,7 +50,6 @@ WebMidi.enable(err => {
         this.urlHash()
       },
       urlHash: function () {
-        console.log('hash it', )
         let rows = this.$data.rows.map(r => r.export())
         let hash = encodeURIComponent(JSON.stringify(rows))
         window.location.hash = hash

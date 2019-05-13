@@ -1,11 +1,10 @@
- - Add channel controls (mute, solo, pan, mix)
  - Add start and stop (immediate and quantized) buttons
  - Add knob controls (name, knob)
  - Add midi controls to knobs and buttons using control change messages
  - remove patch
- - save current patch list
- - load a patch list
- - export a patch list
- -- would be cool if could store the patches in the url hash
- -- to save space, strip hostnames from patches
  -- if inputId does not match, set to unassigned and let the user assign it to a midi device
+ - patch examples
+  - drum
+  - fm syth
+  - sample based
+  - 

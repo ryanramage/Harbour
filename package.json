@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/ryanramage/Harbour#readme",
   "dependencies": {
+    "midi-clock": "0.0.1",
     "tone": "^13.4.9",
     "tone-patch": "^1.0.2",
     "vue": "^2.6.10",

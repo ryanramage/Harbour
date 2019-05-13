@@ -54,13 +54,6 @@
     <div class="thing">
 
       <input v-model="patchUrl" placeholder="Patch URL">
-
-      <select v-model="selected">
-        <option v-for="option in port" v-bind:value="option.value">
-          {{ option.text }}
-        </option>
-      </select>
-
       <select v-model="channel">
         <option>All</option>
 
@@ -85,6 +78,16 @@
       <button v-on:click="addPatch">Add Patch</button>
 
     </div>
+
+    <div class="control-panel">
+      <select v-model="selected">
+        <option v-for="option in port" v-bind:value="option.value">
+          {{ option.text }}
+        </option>
+      </select>
+      <button v-on:click="toggleclock"></button>
+    </div>
+
   </div>
   <script src="./index.js"></script>
 </body>
